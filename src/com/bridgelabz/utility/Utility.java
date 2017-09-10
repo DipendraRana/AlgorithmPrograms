@@ -55,6 +55,8 @@ public class Utility {
 	}
 	
 	public static boolean anagramChecker(String word1,String word2) {
+		count=0;
+		countn=0;
 		if(word1.length()==word2.length()) {
 			for(int j=0;j<word1.length();j++) {
 				for(int i=0;i<word1.length();i++) {
@@ -101,15 +103,14 @@ public class Utility {
 			if(palindromeChecker(store.get(i)))
 				secondryStorage.add(store.get(i));
 		}
-		//System.out.println(secondryStorage);
 		int count=0;
 		for(int i=0;i<secondryStorage.size();i++) {
-			for(int j=i+1;j<secondryStorage.size();j++) 
+			for(int j=i+1;j<secondryStorage.size();j++){ 
 				if(anagramChecker(secondryStorage.get(i),secondryStorage.get(j))) {
-					System.out.println(secondryStorage.get(i)+" "+
-							secondryStorage.get(j));
+					System.out.println(secondryStorage.get(i)+" "+secondryStorage.get(j));
 					count++;
 				}
+			}	
 		}
 		if(count==0)
 			System.out.print("There is no Such Prime number");
