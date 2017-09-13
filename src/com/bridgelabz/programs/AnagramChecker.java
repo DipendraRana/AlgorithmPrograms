@@ -19,8 +19,10 @@ public class AnagramChecker {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String word1=scan.next();
-		String word2=scan.next();
+		System.out.println("Enter the word1:");
+		String word1=scan.nextLine();
+		System.out.println("Enter the word2:");
+		String word2=scan.nextLine();
 		if(Utility.anagramChecker(word1, word2))
 			System.out.println("Anagram");
 		else

@@ -55,32 +55,26 @@ public class Utility {
 	}
 	
 	public static boolean anagramChecker(String word1,String word2) {
+		word1=word1.replaceAll("\\s+", "");
+		word2=word2.replaceAll("\\s+", "");
 		if(word1.length()==word2.length()) {
-			for(int j=0;j<word1.length();j++) {
-				for(int i=0;i<word1.length();i++) {
-					if(word1.charAt(i)==word1.charAt(j))
-						count++;
-				}
-				for(int i=0;i<word2.length();i++) {
-					if(word1.charAt(j)==word2.charAt(i))
-						countn++;
-				}
-				if(count!=countn) {
-					//System.out.println("Anagram Not Possible");
-					return false;
-				}
-			}
-			if(count==countn) {
-			//System.out.println("It is Anagram"); 
-			return true;
-			}
+			word1=word1.toLowerCase();
+			word2=word2.toLowerCase();
+			Character[] copyOfWord1=new Character[word1.length()];
+			Character[] copyOfWord2=new Character[word2.length()];
+			for(int i=0;i<word1.length();i++) 
+				copyOfWord1[i]=word1.charAt(i);
+			for(int i=0;i<word2.length();i++) 
+				copyOfWord2[i]=word2.charAt(i);
+			bubbleSort(copyOfWord1);
+			bubbleSort(copyOfWord2);
+			if(Arrays.equals(copyOfWord1, copyOfWord2))
+				return true;
 			else
 				return false;
 		}
-		else {
-			//System.out.println("Not Anagram");
+		else
 			return false;
-		}
 	}
 	
 	public static ArrayList<String> primeFinderInRange(int minRange,int maxRange) {
