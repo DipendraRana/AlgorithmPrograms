@@ -55,13 +55,8 @@ public class Utility {
 	}
 	
 	public static boolean anagramChecker(String word1,String word2) {
-<<<<<<< HEAD
 		word1=word1.replaceAll("\\s+", "");
 		word2=word2.replaceAll("\\s+", "");
-=======
-		count=0;
-		countn=0;
->>>>>>> c6044c817cfb6da7a23440eade92b26f40ef448d
 		if(word1.length()==word2.length()) {
 			word1=word1.toLowerCase();
 			word2=word2.toLowerCase();
@@ -100,14 +95,15 @@ public class Utility {
 			if(palindromeChecker(store.get(i)))
 				secondryStorage.add(store.get(i));
 		}
+		//System.out.println(secondryStorage);
 		int count=0;
 		for(int i=0;i<secondryStorage.size();i++) {
-			for(int j=i+1;j<secondryStorage.size();j++){ 
+			for(int j=i+1;j<secondryStorage.size();j++) 
 				if(anagramChecker(secondryStorage.get(i),secondryStorage.get(j))) {
-					System.out.println(secondryStorage.get(i)+" "+secondryStorage.get(j));
+					System.out.println(secondryStorage.get(i)+" "+
+							secondryStorage.get(j));
 					count++;
 				}
-			}	
 		}
 		if(count==0)
 			System.out.print("There is no Such Prime number");
@@ -176,15 +172,15 @@ public class Utility {
 			incriment++;
 		}
 		Collections.reverse(storeBinary);
-		/*System.out.println(storeBinary.toString().replace("[","").
-							replace("]","").replace(",", ""));*/
+		System.out.println(storeBinary.toString().replace("[","").
+							replace("]","").replace(",", ""));
 		nibbleSwapper(0,7);
 	}
 	
 	public static void nibbleSwapper(int startingIndex,int lastIndex) {
 		if(startingIndex>24&&lastIndex>32) {
-			/*System.out.println(storeBinary.toString().replace("[","").
-					replace("]","").replace(",", ""));*/
+			System.out.println(storeBinary.toString().replace("[","").
+					replace("]","").replace(",", ""));
 			checkingForPowerOf2(findValueOfBinary());
 		}
 		else {
